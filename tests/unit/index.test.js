@@ -1,28 +1,28 @@
 const assert = require("assert");
 const RustPlugin = require("../../index.js");
 const path = require("path");
-const Serverless = require("serverless/lib/Serverless")
+const Serverless = require("serverless/lib/Serverless");
 
 describe("RustPlugin", () => {
   let plugin;
   let unconfiguredPlugin;
 
   beforeEach(() => {
-    const a = new Serverless()
-    const b = new Serverless()
+    const a = new Serverless();
+    const b = new Serverless();
 
     const pA = a.init().then(() => {
-      a.service.custom.rust = {cargoFlags: "--features foo"};
-      
-      plugin =  new RustPlugin( a, {} );
+      a.service.custom.rust = { cargoFlags: "--features foo" };
+
+      plugin = new RustPlugin(a, {});
     });
 
-    const pB = b.init().then(() => {      
-      unconfiguredPlugin =  new RustPlugin( b, {} );
+    const pB = b.init().then(() => {
+      unconfiguredPlugin = new RustPlugin(b, {});
     });
 
-    return Promise.all([pA, pB])
-  })
+    return Promise.all([pA, pB]);
+  });
 
   it("registers expected lifecycle hooks", () => {
     assert.deepEqual(Object.keys(plugin.hooks), [
@@ -33,13 +33,13 @@ describe("RustPlugin", () => {
 
   it("sets sensible defaults", () => {
     assert.deepEqual(unconfiguredPlugin.custom, {
-      cargoFlags: ""
+      cargoFlags: "",
     });
   });
 
   it("uses services.custom.rust for default overrides", () => {
     assert.deepEqual(plugin.custom, {
-      cargoFlags: "--features foo"
+      cargoFlags: "--features foo",
     });
   });
 
@@ -155,5 +155,4 @@ describe("RustPlugin", () => {
       "failed on windows"
     );
   });
-
 });
