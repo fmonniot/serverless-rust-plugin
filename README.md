@@ -1,8 +1,17 @@
 # serverless-rust
 
-A Serverless framework plugin for Rust applications.
 
-Inspired by −and somewhat forked from− the awesome [softprops/serverless-rust].
+<p align="center">
+   A ⚡ <a href="https://www.serverless.com/framework/docs/">Serverless framework</a> ⚡ plugin for <a href="https://www.rust-lang.org/">Rust</a> applications
+   <br/>
+   Inspired by −and somewhat forked from− the awesome <a href="https://github.com/softprops/serverless-rust"><code>softprops/serverless-rust</code></a>.
+</p>
+
+<div align="center">
+  <a href="https://github.com/fmonniot/serverless-rust-plugin/actions">
+    <img alt="GitHub actions build badge" src="https://github.com/fmonniot/serverless-rust-plugin/actions/workflows/main.yml/badge.svg"/>
+  </a>
+</div>
 
 <hr>
 
@@ -152,6 +161,15 @@ $ npx serverless invoke -f hello -d '{"hello":"world"}'
 ```sh
 $ npx serverless logs -f hello
 ```
+
+
+## Credits & License
+
+Licensed under the MIT license.
+
+This work is adapted from [softprops/serverless-rust]. Doug Tangren (softprops) 2018-2019.
+
+Adaptation by François Monniot (fmonniot) 2021.
 
 
 
