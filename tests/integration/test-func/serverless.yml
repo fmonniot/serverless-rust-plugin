@@ -1,0 +1,28 @@
+
+service: aws-rust # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: provided.al2
+  memorySize: 128
+  lambdaHashingVersion: 20201221 # Only to not show the warning, not required by this plugin
+
+package:
+  individually: true
+  patterns:
+    - "!./**"
+    - "src/**" # Assume it's a configuration folder
+
+plugins:
+  - serverless-rust
+
+functions:
+  hello:
+    rust:
+      profile: release # default, dev is also available
+      #cargoFlags: --stuff
+      rewriteBootstrap: true
+    handler: test-func
+    package:
+      patterns:
+        - "!target"

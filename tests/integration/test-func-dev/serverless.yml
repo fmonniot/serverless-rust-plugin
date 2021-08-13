@@ -1,0 +1,25 @@
+
+service: aws-rust # NOTE: update this with your service name
+provider:
+  name: aws
+  runtime: rust
+  memorySize: 128
+
+package:
+  individually: true
+  patterns:
+    # recursive dev dependencies exclusion blow the heap. Let's make it
+    # easier/faster by removing the modules entirely.
+    - "!node_modules"
+
+plugins:
+  - serverless-rust
+
+custom:
+  rust:
+    profile: dev
+
+functions:
+  hello:
+    rust: {} # Indicate it's a rust function
+    handler: test-func

@@ -1,0 +1,8 @@
+node_modules
+target
+tests/integration/test-func/test-out.log
+tests/integration/test-func-dev/test-out.log
+tests/integration/test-func/local-out.log
+tests/integration/test-func-dev/local-out.log
+.serverless
+coverage

@@ -1,0 +1,44 @@
+{
+    "name": "serverless-rust",
+    "version": "0.1.0",
+    "description": "Serverless framework plugin for Rust applications",
+    "main": "index.js",
+    "scripts": {
+        "lint": "npx prettier --check '**.js' '!coverage' ",
+        "test": "npx jest --collectCoverage",
+        "test:integration": "./tests/integration/test.sh",
+        "fmt": "npx prettier --write '**.js' '!coverage' "
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fmonniot/serverless-rust-plugin.git"
+    },
+    "keywords": [
+        "rust",
+        "aws",
+        "serverless",
+        "lambda"
+    ],
+    "author": "fmonniot",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fmonniot/serverless-rust-plugin/issues"
+    },
+    "homepage": "https://github.com/fmonniot/serverless-rust-plugin#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "jest": "^26.0.1",
+        "jest-circus": "^26.0.1",
+        "prettier": "^2.0.5",
+        "serverless": "2.53.0"
+    },
+    "peerDependencies": {
+        "serverless": "2.53.0"
+    },
+    "files": [
+        "index.js",
+        "package.json",
+        "README.md",
+        "LICENSE"
+    ]
+}
