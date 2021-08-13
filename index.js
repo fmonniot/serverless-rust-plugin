@@ -219,8 +219,9 @@ class RustPlugin {
       func.cleanBootstrap = true;
 
       // Register bootstrap in list of files to include in package
-      // TODO bootstrap file isn't in the correct place, of course !
-      // TODO Copy as bootstrap in serviceDir ?
+      // TODO 2+ bootstrap will fail because we create all the binaries
+      // before packaging. Maybe the package stage needs to be overridden
+      // to support multiple functions after all :(
       if (individuallyPackaged) {
         const pkg = func.package || {};
         const patterns = pkg.patterns || [];
