@@ -15,10 +15,14 @@
 
 <hr>
 
-Why new plugin:
+Why making a new plugin:
 - No custom runtime (deprecated)
 - No assumptions on what the zip archive contains (instead rely on the [patterns] mechanism)
-- Use native cross compilation by default (perhaps offer cross as an alternative)
+- Use native cross compilation by default
+
+Note that like any rewrite, some features were lost in translation:
+- No support for multi-functions project ([issue #1](https://github.com/fmonniot/serverless-rust-plugin/issues/1))
+- No support for docker-based compilation. It should fairly easy to add support for [cross]. Contribution welcome.
 
 ## Install
 
@@ -178,3 +182,4 @@ Adaptation by François Monniot (fmonniot) 2021.
 [rustls]: https://github.com/ctz/rustls
 [MUSL]: https://doc.rust-lang.org/edition-guide/rust-2018/platform-and-target-support/musl-support-for-fully-static-binaries.html
 [serverless workflow command]: https://serverless.com/framework/docs/providers/aws/guide/workflow/
+[cross]: https://github.com/rust-embedded/cross
