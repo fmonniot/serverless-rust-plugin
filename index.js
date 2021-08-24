@@ -21,11 +21,17 @@ class RustPlugin {
     };
 
     // This plugin provides new functions level properties
-    // TODO Update schema to the real deal :)
     this.serverless.configSchemaHandler.defineFunctionProperties("aws", {
       properties: {
-        rust: { type: "boolean" },
-        //anotherProperty: { type: 'number' },
+        rust: {
+          type: 'object',
+          properties: {
+            cargoFlags: { type: 'string' },
+            profile: { type: 'string' },
+            rewriteBootstrap: { type: 'boolean' },
+          },
+          required: [],
+        },
       },
       required: [],
     });
