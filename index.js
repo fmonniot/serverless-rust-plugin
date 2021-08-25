@@ -24,11 +24,11 @@ class RustPlugin {
     this.serverless.configSchemaHandler.defineFunctionProperties("aws", {
       properties: {
         rust: {
-          type: 'object',
+          type: "object",
           properties: {
-            cargoFlags: { type: 'string' },
-            profile: { type: 'string' },
-            rewriteBootstrap: { type: 'boolean' },
+            cargoFlags: { type: "string" },
+            profile: { type: "string" },
+            rewriteBootstrap: { type: "boolean" },
           },
           required: [],
         },
